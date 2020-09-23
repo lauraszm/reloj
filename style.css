@@ -1,0 +1,116 @@
+/*.contenedor {
+   width: 550px;
+   height: 550px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   background-color: #b6b1b1;
+   border: 1px solid black;
+}*/
+
+.contenedor::before {
+   content: "";
+   position: absolute;
+   border: 1px solid black;
+   background: #b6b1b1;
+   height: 550px;
+   width: 550px;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 80;
+}
+
+.reloj {
+   width: 500px;
+   height: 500px;
+   background: white;
+   border-radius: 50%;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 85;
+}
+
+.reloj::after{
+   content: "";   
+   display: block;
+   width: 35px;
+   height: 35px;
+   border-radius: 50%;
+   background-color: black;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+
+@keyframes rotar {
+   From {transform: rotate(0deg)}
+   To {transform: rotate(360deg)}
+
+}
+
+.segundero{
+   height: 200px;
+   width: 5px;
+   background-color: red;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   /*transform: translate(-50%, -50%);*/
+   z-index: 99;
+   animation: rotar linear 60s infinite;
+   transform-origin: top;
+
+}
+
+.minutero{
+   width: 150px;
+   height: 10px;
+   background-color: grey;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   z-index: 95;
+   animation: rotar linear 3600s infinite;
+   transform-origin: left;
+
+}
+
+.hora{
+   height: 100px;
+   width: 15px;
+   background-color: black;
+   position: absolute;
+   left: 50%;
+   bottom: 50%;
+   z-index: 90;
+   animation: rotar linear 43200s infinite;
+   transform-origin: bottom;
+
+}
+
+
+
+
+/* ideas para el reloj:
+   - gradient de 60 segundos
+
+Para las agujas:
+   Defino la funcion
+@keyframes rotar {
+	From {transform: rotate(0deg)}
+   To {transform: rotate(90deg)}
+   transform-origin
+}
+
+Elijo a que atributo se aplica:
+Div {
+	Animation: rotar 2s linear infinite --> linear define aceleracion linear/ease-in/ease-out
+}
+
+
+    */
